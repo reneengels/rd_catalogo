@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:provider/provider.dart';
+import 'package:rd_catalogo/themes/app_theme.dart';
 
 import 'screens/login.dart';
 
@@ -25,14 +27,16 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return ChangeNotifierProvider(
+      create: (_) => AppTheme(),
+      builder: (context, _) => MaterialApp(
+        title: 'Flutter Demo',
+        theme: AppTheme.light,
+        darkTheme: AppTheme.dark,
+        themeMode: context.watch<AppTheme>().themeMode,
+        debugShowCheckedModeBanner: false,
+        home: const Login(),
       ),
-      home: const Login(),
     );
   }
 }
