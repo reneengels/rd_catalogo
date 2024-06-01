@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:rd_catalogo/themes/app_theme.dart';
 import 'package:rd_catalogo/themes/app_typography.dart';
 
