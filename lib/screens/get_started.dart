@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:rd_catalogo/themes/app_theme.dart';
 import 'package:rd_catalogo/themes/app_typography.dart';
 
-import 'home.dart';
+import 'home/home.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class GetStartedView extends StatelessWidget {
+  const GetStartedView({super.key});
 
   @override
   Widget build(BuildContext context) {

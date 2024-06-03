@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "462916155679",
+    "project_id": "jardimsecretofirebase",
+    "storage_bucket": "jardimsecretofirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462916155679:android:7ca170ddcc43c72085d82a",
+        "android_client_info": {
+          "package_name": "com.rene.jardim_secreto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc8brmZxJ26tBc0gGDoqEvwry9zrkdeGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
