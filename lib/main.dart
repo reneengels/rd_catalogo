@@ -3,7 +3,6 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:provider/provider.dart';
 import 'package:rd_catalogo/themes/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:rd_catalogo/wrapper.dart';
 import 'firebase_options.dart';
 
 import 'screens/get_started.dart';
