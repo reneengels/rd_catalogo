@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "462916155679",
+    "project_id": "jardimsecretofirebase",
+    "storage_bucket": "jardimsecretofirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462916155679:android:7ca170ddcc43c72085d82a",
+        "android_client_info": {
+          "package_name": "com.rene.jardim_secreto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462916155679-can3h0l3is4t31tfm3o8nedo3jo7pqj8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rene.jardim_secreto",
+            "certificate_hash": "973026d5cab9c2ab89808ebbc5052c7a779d0072"
+          }
+        },
+        {
+          "client_id": "462916155679-hjc14hpgttebejepvanqvj0afv33g2mp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc8brmZxJ26tBc0gGDoqEvwry9zrkdeGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462916155679-hjc14hpgttebejepvanqvj0afv33g2mp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "462916155679-okdriep6ji79bfjbgcglrvjj4lfteitl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.rdCatalogo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

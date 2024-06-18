@@ -5,7 +5,7 @@ import 'package:rd_catalogo/themes/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
-import 'screens/login.dart';
+import 'package:rd_catalogo/wrapper.dart';
 
 Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
         darkTheme: AppTheme.dark,
         themeMode: context.watch<AppTheme>().themeMode,
         debugShowCheckedModeBanner: false,
-        home: const Login(),
+        home: const Wrapper(),
       ),
     );
   }
