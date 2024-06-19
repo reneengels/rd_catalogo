@@ -5,6 +5,8 @@ import 'app_colors_extension.dart';
 import 'app_text_theme_extension.dart';
 import 'app_typography.dart';
 
+export 'app_typography.dart';
+
 class AppTheme with ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.system;
 
@@ -39,9 +41,9 @@ class AppTheme with ChangeNotifier {
     error: const Color(0xffb00020),
     onError: Colors.white,
     background: AppPalette.pink,
-    onBackground: Colors.blueGrey,
+    onBackground: AppPalette.plumPurple,
     surface: Colors.white,
-    onSurface: Colors.black,
+    onSurface: Colors.black26,
   );
 
   static final _lightTextTheme = SimpleAppTextThemeExtension(

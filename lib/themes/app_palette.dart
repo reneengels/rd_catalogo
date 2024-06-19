@@ -8,6 +8,8 @@ abstract class AppPalette {
   // Blue
   static const blue = Color(0xff5cc6ef);
 
+  static const plumPurple = Color(0xff4b2e4f);
+
   // Red
   // static const red = Colors.red;
   // static const imperialRed = Color(0xFFE54B4B);

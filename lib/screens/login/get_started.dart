@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:rd_catalogo/themes/app_theme.dart';
-import 'package:rd_catalogo/themes/app_typography.dart';
+import '../../components/button_with_arrow.dart';
 
+import '../../themes/app_theme.dart';
 import '../home/home.dart';
+import 'sign_in.dart';
 
 class GetStartedView extends StatelessWidget {
-    const GetStartedView({super.key});
+  const GetStartedView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,47 +64,16 @@ class GetStartedView extends StatelessWidget {
                       ],
                     ),
                   ),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                        context.theme.appColors.primary,
-                      ),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                            20,
-                          ),
-                        ),
-                      ),
-                    ),
-                    onPressed: () => {
+                  ButtonWithArrow(
+                    'Comece Agora!',
+                    () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (ctx) => const HomePage(),
+                          builder: (ctx) => const SignInView(),
                         ),
-                      ),
+                      );
                     },
-                    child: SizedBox(
-                      width: 220,
-                      height: 60,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            'Comece Agora!',
-                            style: AppTypography.h2.copyWith(
-                              color: context.theme.appColors.onPrimary,
-                            ),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_rounded,
-                            color: context.theme.appColors.onPrimary,
-                            size: 26,
-                          ),
-                        ],
-                      ),
-                    ),
                   ),
                 ],
               ),
