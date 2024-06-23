@@ -6,13 +6,19 @@ class FormItem extends StatelessWidget {
   final String text;
   final TextEditingController controller;
   final String? Function(String? input) validator;
+  final bool obscuredText;
 
   const FormItem({
     super.key,
     required this.text,
     required this.controller,
     required this.validator,
+    this.obscuredText = false,
   });
+
+  static String? _defaultValidator(String? input) {
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +31,7 @@ class FormItem extends StatelessWidget {
             color: context.theme.appColors.onBackground,
           ),
           validator: (value) => validator(value),
+          obscureText: obscuredText,
           decoration: InputDecoration(
             labelText: text,
             labelStyle: AppTypography.body1.copyWith(

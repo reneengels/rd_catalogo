@@ -1,28 +1,41 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../../components/button_with_arrow.dart';
 import '../../components/form_item.dart';
 import '../../themes/app_theme.dart';
+import 'sign_up.dart';
 
-class SignInView extends StatelessWidget {
-  const SignInView({super.key});
+class SignInPage extends StatelessWidget {
+  const SignInPage({super.key});
+
+  static const route = '/sign-in';
+
+  @override
+  Widget build(BuildContext context) {
+    return const _SignInView();
+  }
+}
+
+class _SignInView extends StatelessWidget {
+  const _SignInView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(50),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _WelcomeText(),
-            _LoginForm(),
-            _SignInOptions(),
-            _SignUp(),
-          ],
+      resizeToAvoidBottomInset: false,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(50),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _WelcomeText(),
+              _LoginForm(),
+              _SignInOptions(),
+              _SignUp(),
+            ],
+          ),
         ),
       ),
     );
@@ -30,7 +43,7 @@ class SignInView extends StatelessWidget {
 }
 
 class _WelcomeText extends StatelessWidget {
-  const _WelcomeText({super.key});
+  const _WelcomeText();
 
   @override
   Widget build(BuildContext context) {
@@ -89,13 +102,28 @@ class _LoginForm extends StatelessWidget {
           FormItem(
             text: 'Senha',
             controller: passwordController,
-            validator: (input) => null,
+            validator: (input) {
+              if (input == null) {
+                return 'Insira sua senha';
+              } else if (input.length < 6) {
+                return 'A senha deve ter ao menos 6 dígitos';
+              } else {
+                return null;
+              }
+            },
+            obscuredText: true,
           ),
           const SizedBox(height: 10),
-          Text(
-            'Esqueceu sua Senha?',
-            style: AppTypography.body3.copyWith(
-              color: context.theme.appColors.error,
+          InkWell(
+            onTap: () {
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(SnackBar(content: Text('text')));
+            },
+            child: Text(
+              'Esqueceu sua Senha?',
+              style: AppTypography.body3.copyWith(
+                color: context.theme.appColors.error,
+              ),
             ),
           ),
           Center(
@@ -104,7 +132,9 @@ class _LoginForm extends StatelessWidget {
               child: ButtonWithArrow(
                 'Login',
                 () {
-                  FocusScope.of(context).requestFocus(FocusNode());
+                  FocusManager.instance.primaryFocus?.unfocus();
+
+                  if (formKey.currentState!.validate()) {}
                 },
               ),
             ),
@@ -116,7 +146,7 @@ class _LoginForm extends StatelessWidget {
 }
 
 class _SignInOptions extends StatelessWidget {
-  const _SignInOptions({super.key});
+  const _SignInOptions();
 
   @override
   Widget build(BuildContext context) {
@@ -159,27 +189,37 @@ class _SignInOptions extends StatelessWidget {
 }
 
 class _SignUp extends StatelessWidget {
-  const _SignUp({super.key});
+  const _SignUp();
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          'Não tem uma conta?',
-          style: AppTypography.body2.copyWith(
-            color: context.theme.appColors.onBackground,
+    return SizedBox(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Não tem uma conta?',
+            style: AppTypography.body2.copyWith(
+              color: context.theme.appColors.onBackground,
+            ),
           ),
-        ),
-        const SizedBox(width: 10),
-        Text(
-          'criar conta',
-          style: AppTypography.body2.copyWith(
-            color: context.theme.appColors.error,
+          const SizedBox(width: 10),
+          InkWell(
+            onTap: () {
+              Navigator.pushReplacementNamed(
+                context,
+                SignUpPage.route,
+              );
+            },
+            child: Text(
+              'criar conta',
+              style: AppTypography.body2.copyWith(
+                color: context.theme.appColors.error,
+              ),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -7,6 +7,9 @@ import 'firebase_options.dart';
 
 import 'package:rd_catalogo/wrapper.dart';
 
+import 'screens/login/sign_in.dart';
+import 'screens/login/sign_up.dart';
+
 Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
@@ -43,6 +46,10 @@ class _MyAppState extends State<MyApp> {
         themeMode: context.watch<AppTheme>().themeMode,
         debugShowCheckedModeBanner: false,
         home: const Wrapper(),
+        routes: {
+          SignInPage.route : (ctx) => const SignInPage(),
+          SignUpPage.route : (ctx) => const SignUpPage(),
+        },
       ),
     );
   }

@@ -67,11 +67,9 @@ class GetStartedView extends StatelessWidget {
                   ButtonWithArrow(
                     'Comece Agora!',
                     () {
-                      Navigator.push(
+                      Navigator.pushReplacementNamed(
                         context,
-                        MaterialPageRoute(
-                          builder: (ctx) => const SignInView(),
-                        ),
+                        SignInPage.route,
                       );
                     },
                   ),
